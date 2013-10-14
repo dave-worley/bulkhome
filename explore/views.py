@@ -43,12 +43,14 @@ def create_signature_string(params):
 
 def home(request):
     key = settings.AMAZON_KEY
-    signature = create_signature_string(dict(
-        Service='AWSECommerceService',
-        Operation='ItemLookup',
-        IdType='ISBN',
-        ItemId='9780735619678',
-        SearchIndex='Books',
-        AWSAccessKeyId=key,
-        ResponseGroup='Images,ItemAttributes,EditorialReview,SalesRank'))
+    params = {
+        "Service": "AWSECommercService",
+        "Operation": "ItemLookup",
+        "IdType": "ISBN",
+        "ItemId": "9780735619678",
+        "SearchIndex": "Books",
+        "AWSAccessKeyId": key,
+        "ResponseGroup": "Images,ItemAttributes,EditorialReview,SalesRank"
+    }
+    signature = create_signature_string(params)
     return render(request, 'home.html', {"signature": signature})
