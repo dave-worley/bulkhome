@@ -53,4 +53,4 @@ def home(request):
         "ResponseGroup": "Images,ItemAttributes,EditorialReview,SalesRank"
     }
     signature = create_signature_string(params)
-    return render(request, 'home.html', {"signature": signature})
+    return render(request, 'home.html', {"signature": "Hello!"})
