@@ -14,6 +14,12 @@ framework.
 
 """
 import os
+import sys
+from unipath import Path
+
+PROJECT_ROOT = Path(__file__).ancestor(2)
+
+sys.path.append(PROJECT_ROOT)
 
 # We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
 # if running multiple sites in the same mod_wsgi process. To fix this, use
