@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %} Bulk Groceries at Home</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico"/>
+  <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" type="text/css"/>
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css"/>
+  {% block extrahead %}{% endblock %}
+</head>
+<body id="{% block bodyid %}{% endblock %}">
+<div id="maincontainer" class="container">
+{% include 'parts/header.html' %}
+{% block header %}{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
+{% include 'parts/footer.html' %}
+</div>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/modernizr.min.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
